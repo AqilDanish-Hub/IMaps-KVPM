@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IMaPS KVPM — Informasi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <div class="brand">
+      <span class="logo" aria-hidden="true"></span>
+      <div>
+        <h1>IMaPS KVPM</h1>
+        <div class="small">Pemetaan Interaktif — Kolej Vokasional Pasir Mas</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="info.html">Informasi</a>
+      <a href="items.html">Items</a>
+    </nav>
+  </div>
+
+  <main class="container">
+    <div class="card">
+      <h2 class="hero-title">Informasi Sistem</h2>
+      <p class="lead">IMaPS KVPM ialah sistem pemetaan interaktif yang direka untuk membantu warga kampus dan pelawat mencari lokasi strategik dengan mudah. Sistem ini menggunakan Google Maps API / My Maps sebagai sumber peta dan boleh diakses melalui pelayar web pada telefon atau komputer.</p>
+
+      <h3 style="margin-top:14px;color:var(--brand)">Ciri-ciri</h3>
+      <ul class="small">
+        <li>Paparan peta interaktif dengan penanda lokasi</li>
+        <li>Maklumat ringkas tentang setiap bangunan</li>
+        <li>Mesra peranti mudah alih dan desktop</li>
+      </ul>
+
+      <div style="margin-top:16px">
+        <a class="btn" href="index.html">Kembali ke Home</a>
+        <a class="btn secondary" href="items.html">Lihat Items</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>© <span id="year"></span> IMaPS KVPM</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

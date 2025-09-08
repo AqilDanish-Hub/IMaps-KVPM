@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IMaPS KVPM — Home</title>
+  <!-- Google Font (link tag is more reliable when loading from file://) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Link to stylesheet (ensure style.css is in same folder) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <div class="brand">
+      <span class="logo" aria-hidden="true"></span>
+      <div>
+        <h1>IMaPS KVPM</h1>
+        <div class="small">Pemetaan Interaktif — Kolej Vokasional Pasir Mas</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="info.html">Informasi</a>
+      <a href="items.html">Items</a>
+    </nav>
+  </div>
+
+  <main class="container">
+    <div class="grid">
+      <div class="card">
+        <div class="hero-title">Selamat Datang ke IMaPS KVPM</div>
+        <p class="lead">Sistem pemetaan interaktif berasaskan Google Maps untuk membantu pelajar, pensyarah, staf dan pelawat mencari lokasi strategik di Kolej Vokasional Pasir Mas.</p>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn" href="items.html">Lihat Lokasi Kampus</a>
+          <a class="btn secondary" href="info.html">Maklumat Sistem</a>
+        </div>
+
+        <div style="margin-top:18px" class="card">
+          <strong>Aqil Danish</strong><div class="small">Pembangun Sistem</div>
+          <div style="height:12px"></div>
+          <strong>Amir Imaan</strong><div class="small">Penolong Pembangun Sistem</div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <div style="font-weight:700;color:var(--brand);margin-bottom:8px">Ringkasan Sistem</div>
+        <div class="small">IMaPS KVPM menggunakan Google Maps API atau Google My Maps untuk memaparkan lokasi bangunan utama kampus secara interaktif. Klik 'Items' untuk lihat senarai.</div>
+        <div style="margin-top:14px" class="small">Masalah biasa: peta statik dan kekurangan tanda yang tepat. Penyelesaian: peta maya interaktif yang boleh diakses melalui telefon & komputer.</div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>© <span id="year"></span> IMaPS KVPM — Dibangunkan oleh Aqil Danish & Amir Imaan</footer>
+
+  <!-- Overlay shown only when CSS failed to load (script toggles it) -->
+  <div id="css-fail-overlay" role="alert">
+    <div class="box">
+      <h3>Gagal memuatkan gaya (style.css)</h3>
+      <p>Jika anda melihat mesej ini, pelayar tidak dapat memuatkan <code>style.css</code>. Pastikan fail <strong>style.css</strong> berada dalam folder yang sama dengan <strong>index.html</strong>, <strong>info.html</strong> dan <strong>items.html</strong>.</p>
+      <p>Struktur yang betul:</p>
+      <pre style="background:#0b1224;padding:10px;border-radius:6px">imaps-kvpm/
+ ├─ index.html
+ ├─ info.html
+ ├─ items.html
+ └─ style.css</pre>
+      <p class="small">Nota: selepas perbaiki struktur, refresh (Ctrl+R) atau cuba buka semula <strong>index.html</strong>.</p>
+    </div>
+  </div>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Detect if CSS loaded: check CSS variable --css-loaded
+    (function(){
+      var cssLoaded = getComputedStyle(document.documentElement).getPropertyValue('--css-loaded').trim();
+      if(cssLoaded !== 'yes'){
+        // show overlay instructing user how to fix
+        document.getElementById('css-fail-overlay').style.display = 'flex';
+        console.warn('CSS not loaded: --css-loaded variable not found. Check style.css path.');
+      } else {
+        // all good (remove overlay if present)
+        var el = document.getElementById('css-fail-overlay');
+        if(el) el.style.display = 'none';
+      }
+    })();
+  </script>
+</body>
+</html>
