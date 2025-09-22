@@ -5,15 +5,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>IMaPS KVPM — Home</title>
-  <!-- Google Font (link tag is more reliable when loading from file://) -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Link to stylesheet (ensure style.css is in same folder) -->
+  <!-- Link to stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="header">
     <div class="brand">
-      <span class="logo" aria-hidden="true"></span>
+      <!-- ✅ New logo added here -->
+      <img src="logo.png" alt="IMaPS KVPM Logo" class="site-logo" style="height:60px;margin-right:12px;">
       <div>
         <h1>IMaPS KVPM</h1>
         <div class="small">Pemetaan Interaktif — Kolej Vokasional Pasir Mas</div>
@@ -54,7 +55,7 @@
 
   <footer>© <span id="year"></span> IMaPS KVPM — Dibangunkan oleh Aqil Danish & Amir Imaan</footer>
 
-  <!-- Overlay shown only when CSS failed to load (script toggles it) -->
+  <!-- Overlay shown only when CSS failed to load -->
   <div id="css-fail-overlay" role="alert">
     <div class="box">
       <h3>Gagal memuatkan gaya (style.css)</h3>
@@ -73,15 +74,13 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Detect if CSS loaded: check CSS variable --css-loaded
+    // Detect if CSS loaded
     (function(){
       var cssLoaded = getComputedStyle(document.documentElement).getPropertyValue('--css-loaded').trim();
       if(cssLoaded !== 'yes'){
-        // show overlay instructing user how to fix
         document.getElementById('css-fail-overlay').style.display = 'flex';
         console.warn('CSS not loaded: --css-loaded variable not found. Check style.css path.');
       } else {
-        // all good (remove overlay if present)
         var el = document.getElementById('css-fail-overlay');
         if(el) el.style.display = 'none';
       }
