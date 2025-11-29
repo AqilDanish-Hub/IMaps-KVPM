@@ -5,15 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>IMaps KVPM — Home</title>
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button id="mode-toggle">🌙 Dark Mode</button>
+
   <div class="header">
     <div class="brand">
-      <!-- ✅ Blue box background restored -->
       <div class="logo" style="display:flex;align-items:center;justify-content:center;">
         <img src="logo.png" alt="IMaPS KVPM Logo" width="40" height="40">
       </div>
@@ -26,7 +25,6 @@
       <a href="index.html">Home</a>
       <a href="info.html">Informasi</a>
       <a href="items.html">Items</a>
-      <button class="mode-toggle" onclick="toggleMode()">🌓</button>
     </nav>
   </div>
 
@@ -58,51 +56,34 @@
 
   <footer>© <span id="year"></span> IMaps KVPM — Dibangunkan oleh Aqil Danish & Amir Imaan</footer>
 
-  <!-- Overlay shown only when CSS failed to load -->
   <div id="css-fail-overlay" role="alert">
     <div class="box">
       <h3>Gagal memuatkan gaya (style.css)</h3>
       <p>Jika anda melihat mesej ini, pelayar tidak dapat memuatkan <code>style.css</code>. Pastikan fail <strong>style.css</strong> berada dalam folder yang sama dengan <strong>index.html</strong>, <strong>info.html</strong> dan <strong>items.html</strong>.</p>
-      <p>Struktur yang betul:</p>
-      <pre style="background:#0b1224;padding:10px;border-radius:6px">imaps-kvpm/
- ├─ index.html
- ├─ info.html
- ├─ items.html
- └─ style.css</pre>
-      <p class="small">Nota: selepas perbaiki struktur, refresh (Ctrl+R) atau cuba buka semula <strong>index.html</strong>.</p>
     </div>
   </div>
 
   <script>
-    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Detect if CSS loaded
+    // Dark/Light mode toggle
+    const toggleBtn = document.getElementById('mode-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      toggleBtn.textContent = document.body.classList.contains('light-mode') ? '🌚 Light Mode' : '🌙 Dark Mode';
+    });
+
+    // CSS fail detection
     (function(){
       var cssLoaded = getComputedStyle(document.documentElement).getPropertyValue('--css-loaded').trim();
       if(cssLoaded !== 'yes'){
         document.getElementById('css-fail-overlay').style.display = 'flex';
-        console.warn('CSS not loaded: --css-loaded variable not found. Check style.css path.');
+        console.warn('CSS not loaded: --css-loaded variable not found.');
       } else {
         var el = document.getElementById('css-fail-overlay');
         if(el) el.style.display = 'none';
       }
     })();
   </script>
-  
-  <script>
-  function toggleMode() {
-    document.body.classList.toggle('light');
-    localStorage.setItem("mode", document.body.classList.contains('light') ? "light" : "dark");
-  }
-
-  // Load mode on refresh
-  (function(){
-    if (localStorage.getItem("mode") === "light") {
-      document.body.classList.add("light");
-    }
-  })();
-</script>
-
 </body>
 </html>
