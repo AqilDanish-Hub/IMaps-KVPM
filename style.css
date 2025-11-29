@@ -8,28 +8,33 @@
   --css-loaded: yes;
 }
 
-/* Dark / Light Mode Toggle */
-body.light-mode {
-  --bg: #f9fafb;
-  --panel: #ffffff;
-  --muted: #6b7280;
-  --text: #111827;
-  --brand: #3b82f6;
-  --brand-2: #60a5fa;
+/* Dark/Light mode toggle button in header */
+#mode-toggle {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  font-size: 13px;
+  background: linear-gradient(90deg,var(--brand),var(--brand-2));
+  color: white;
+  box-shadow: 0 6px 18px rgba(59,130,246,0.12);
+  border: none;
 }
 
-#mode-toggle {
-  position: fixed;
-  top: 18px;
-  right: 24px;
-  background: var(--panel);
+body.light-mode {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --muted: #64748b;
+  --text: #0f172a;
+  --brand: #22d3ee;
+  --brand-2: #3b82f6;
+}
+
+body.light-mode #mode-toggle {
+  background: linear-gradient(90deg, var(--brand-2), var(--brand));
   color: var(--text);
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 8px;
-  padding: 6px 10px;
-  cursor: pointer;
-  font-weight: 600;
-  z-index: 999;
 }
 
 /* Basic reset */
