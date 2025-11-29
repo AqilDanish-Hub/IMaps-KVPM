@@ -10,7 +10,7 @@
 <body>
   <div class="header">
     <div class="brand">
-      <img src="logo.png" alt="IMaPS KVPM Logo" class="logo" width="60" height="60" style="margin-right:10px">
+      <div class="logo"><img src="logo.png" alt="IMaPS KVPM Logo"></div>
       <div>
         <h1>IMaps KVPM</h1>
         <div class="small">Pemetaan Interaktif — Kolej Vokasional Pasir Mas</div>
@@ -20,13 +20,11 @@
       <a href="index.html">Home</a>
       <a href="info.html">Informasi</a>
       <a href="items.html">Items</a>
+      <div class="theme-toggle">
+        <input type="checkbox" id="toggle-theme">
+        <label for="toggle-theme" class="switch"></label>
+      </div>
     </nav>
-    <div class="theme-switch">
-      <label class="switch">
-        <input type="checkbox" id="theme-toggle">
-        <span class="slider"></span>
-      </label>
-    </div>
   </div>
 
   <main class="container">
@@ -34,14 +32,14 @@
       <h2 class="hero-title">Informasi Sistem</h2>
       <p class="lead">IMaps KVPM ialah sistem pemetaan interaktif yang direka untuk membantu warga kampus dan pelawat mencari lokasi strategik dengan mudah. Sistem ini menggunakan Google Maps API / My Maps sebagai sumber peta dan boleh diakses melalui pelayar web pada telefon atau komputer.</p>
 
-      <h3 style="margin-top:14px;color:var(--brand)">Ciri-ciri</h3>
+      <h3 class="card-title">Ciri-ciri</h3>
       <ul class="small">
         <li>Paparan peta interaktif dengan penanda lokasi</li>
         <li>Maklumat ringkas tentang setiap bangunan</li>
         <li>Mesra peranti mudah alih dan desktop</li>
       </ul>
 
-      <div style="margin-top:16px">
+      <div class="btn-group">
         <a class="btn" href="index.html">Kembali ke Home</a>
         <a class="btn secondary" href="items.html">Lihat Items</a>
       </div>
@@ -49,22 +47,7 @@
   </main>
 
   <footer>© <span id="year"></span> IMaps KVPM</footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const toggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    if(localStorage.getItem('theme') === 'light'){
-      body.classList.add('light-mode');
-      toggle.checked = true;
-    }
-    toggle.addEventListener('change', () => {
-      body.classList.toggle('light-mode');
-      if(body.classList.contains('light-mode')){
-        localStorage.setItem('theme','light');
-      }else{
-        localStorage.setItem('theme','dark');
-      }
-    });
-  </script>
+
+  <script src="theme.js"></script>
 </body>
 </html>
