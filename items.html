@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-mode">
   <div class="header">
     <div class="brand">
       <div class="logo" style="display:flex;align-items:center;justify-content:center;">
@@ -50,19 +50,35 @@
       <div class="item"><div>Court Sukan</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
       <div class="item"><div>Ladang Kebun KVPM</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
       <div class="item"><div>Bilik Mesyuarat</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Koperasi Sekolah</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Garage Automotif</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Wakaf Amal</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Cyber Cafe Asrama</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Koperasi Asrama</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Bilik Warden</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Pejabat Penyelia Asrama</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Makmal ICT</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Rumah Warden</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Rumah Pengarah</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Pondok Guard</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Bilik Psikologi dan Kerjaya</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Mock Office</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
     </div>
 
-    <div style="margin-top:16px">
-      <a class="btn secondary" href="index.html">Kembali ke Home</a>
+    <div style="margin-top:20px">
+      <a class="btn secondary" href="index.html">Kembali <--</a>
     </div>
   </main>
 
   <footer>© <span id="year"></span> IMaps KVPM</footer>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
     const toggleBtn = document.getElementById('mode-toggle');
     toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
+      document.body.classList.toggle('dark-mode');
       toggleBtn.textContent = document.body.classList.contains('light-mode') ? '🌚 Light Mode' : '🌙 Dark Mode';
     });
   </script>
