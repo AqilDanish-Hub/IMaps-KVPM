@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="mode-toggle">🌙 Dark Mode</button>
-
   <div class="header">
     <div class="brand">
       <div class="logo" style="display:flex;align-items:center;justify-content:center;">
@@ -21,10 +19,12 @@
         <div class="small">Pemetaan Interaktif — Kolej Vokasional Pasir Mas</div>
       </div>
     </div>
+
     <nav class="nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="info.html">Informasi</a>
       <a href="items.html">Items</a>
+      <button id="mode-toggle">🌙 Dark Mode</button>
     </nav>
   </div>
 
@@ -60,11 +60,31 @@
     <div class="box">
       <h3>Gagal memuatkan gaya (style.css)</h3>
       <p>Jika anda melihat mesej ini, pelayar tidak dapat memuatkan <code>style.css</code>. Pastikan fail <strong>style.css</strong> berada dalam folder yang sama dengan <strong>index.html</strong>, <strong>info.html</strong> dan <strong>items.html</strong>.</p>
+      <p>Struktur yang betul:</p>
+      <pre style="background:#0b1224;padding:10px;border-radius:6px">imaps-kvpm/
+ ├─ index.html
+ ├─ info.html
+ ├─ items.html
+ └─ style.css</pre>
+      <p class="small">Nota: selepas perbaiki struktur, refresh (Ctrl+R) atau cuba buka semula <strong>index.html</strong>.</p>
     </div>
   </div>
 
   <script>
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Detect if CSS loaded
+    (function(){
+      var cssLoaded = getComputedStyle(document.documentElement).getPropertyValue('--css-loaded').trim();
+      if(cssLoaded !== 'yes'){
+        document.getElementById('css-fail-overlay').style.display = 'flex';
+        console.warn('CSS not loaded: --css-loaded variable not found. Check style.css path.');
+      } else {
+        var el = document.getElementById('css-fail-overlay');
+        if(el) el.style.display = 'none';
+      }
+    })();
 
     // Dark/Light mode toggle
     const toggleBtn = document.getElementById('mode-toggle');
@@ -72,18 +92,6 @@
       document.body.classList.toggle('light-mode');
       toggleBtn.textContent = document.body.classList.contains('light-mode') ? '🌚 Light Mode' : '🌙 Dark Mode';
     });
-
-    // CSS fail detection
-    (function(){
-      var cssLoaded = getComputedStyle(document.documentElement).getPropertyValue('--css-loaded').trim();
-      if(cssLoaded !== 'yes'){
-        document.getElementById('css-fail-overlay').style.display = 'flex';
-        console.warn('CSS not loaded: --css-loaded variable not found.');
-      } else {
-        var el = document.getElementById('css-fail-overlay');
-        if(el) el.style.display = 'none';
-      }
-    })();
   </script>
 </body>
 </html>
