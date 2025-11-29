@@ -8,21 +8,7 @@
   --css-loaded: yes;
 }
 
-/* Dark/Light mode toggle button in header */
-#mode-toggle {
-  display: inline-block;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-weight: 700;
-  cursor: pointer;
-  text-align: center;
-  font-size: 13px;
-  background: linear-gradient(90deg,var(--brand),var(--brand-2));
-  color: white;
-  box-shadow: 0 6px 18px rgba(59,130,246,0.12);
-  border: none;
-}
-
+/* Light mode override */
 body.light-mode {
   --bg: #f8fafc;
   --panel: #ffffff;
@@ -30,11 +16,6 @@ body.light-mode {
   --text: #0f172a;
   --brand: #22d3ee;
   --brand-2: #3b82f6;
-}
-
-body.light-mode #mode-toggle {
-  background: linear-gradient(90deg, var(--brand-2), var(--brand));
-  color: var(--text);
 }
 
 /* Basic reset */
@@ -50,6 +31,7 @@ body{
   display:flex;
   flex-direction:column;
   min-height:100vh;
+  transition: background 0.3s, color 0.3s;
 }
 
 /* Header */
@@ -86,6 +68,7 @@ body{
   background:var(--panel);
   padding:22px;border-radius:14px;
   box-shadow:0 10px 30px rgba(2,6,23,0.45);
+  transition: background 0.3s, color 0.3s;
 }
 .hero-title{font-size:28px;color:var(--brand);margin-bottom:10px}
 .lead{color:var(--muted);margin-bottom:16px}
@@ -95,15 +78,37 @@ body{
   display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;
   background:linear-gradient(90deg,var(--brand),var(--brand-2));color:white;
   box-shadow:0 6px 18px rgba(59,130,246,0.12);
+  transition: background 0.3s, color 0.3s;
 }
 .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)}
+.btn.secondary:hover{opacity:0.9;}
+
+/* Dark/Light toggle button */
+#mode-toggle{
+  font-size:14px;
+  padding:6px 10px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  font-weight:700;
+  transition: background 0.3s, color 0.3s;
+}
+body.dark-mode #mode-toggle{
+  background:linear-gradient(90deg,var(--brand),var(--brand-2));
+  color:white;
+}
+body.light-mode #mode-toggle{
+  background:#e2e8f0;
+  color:#0f172a;
+}
 
 /* items list */
 .items{display:grid;gap:12px;margin-top:8px}
 .item{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02)}
+body.light-mode .item{background:rgba(0,0,0,0.04)}
 
 /* Footer */
-footer{padding:20px;text-align:center;color:var(--muted);font-size:14px}
+footer{padding:20px;text-align:center;color:var(--muted);font-size:14px;transition:color 0.3s}
 
 /* Small helper */
 .small{font-size:13px;color:var(--muted)}
