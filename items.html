@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="mode-toggle">🌙 Dark Mode</button>
-
   <div class="header">
     <div class="brand">
       <div class="logo" style="display:flex;align-items:center;justify-content:center;">
@@ -24,6 +22,7 @@
       <a href="index.html">Home</a>
       <a href="info.html">Informasi</a>
       <a href="items.html">Items</a>
+      <button id="mode-toggle">🌙 Dark Mode</button>
     </nav>
   </div>
 
@@ -36,17 +35,29 @@
       <div class="item"><div>Pejabat</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
       <div class="item"><div>Surau Al-huda</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
       <div class="item"><div>Blok Teknologi Maklumat</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
-      <!-- Tambah item lain seperti asal -->
+      <div class="item"><div>Asrama Blok A</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Asrama Blok B</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Asrama Blok C</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Asrama Blok D</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Dewan Makan Asrama</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Padang Bola Sepak</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Padang Rugby</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Student Centre</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Parking Bas</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Kantin</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Kantin 2</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Bilik PTP</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Court Sukan</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Ladang Kebun KVPM</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Bilik Mesyuarat</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
     </div>
-    
-    <div style="margin-top:20px">
-      <a class="btn secondary" href="index.html">Kembali <--</a>
+
+    <div style="margin-top:16px">
+      <a class="btn secondary" href="index.html">Kembali ke Home</a>
     </div>
-    
   </main>
 
   <footer>© <span id="year"></span> IMaps KVPM</footer>
-
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     const toggleBtn = document.getElementById('mode-toggle');
