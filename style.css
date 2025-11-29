@@ -81,6 +81,38 @@ footer{padding:20px;text-align:center;color:var(--muted);font-size:14px}
 
 /* Debug overlay if CSS didn't load */
 #css-fail-overlay{
+
+/* ===============================
+   LIGHT MODE SYSTEM
+   ===============================*/
+
+body.light {
+  --bg: #eef2f7;
+  --panel: #ffffff;
+  --text: #0f172a;
+  --muted: #445069;
+  --brand: #3b82f6;
+  --brand-2: #2563eb;
+  background: linear-gradient(135deg,#dbe6f3,#e3ecf9);
+}
+
+/* Toggle Button */
+.mode-toggle {
+  background: rgba(255,255,255,0.25);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-left: 8px;
+  font-size: 16px;
+  color: white;
+  transition: 0.25s;
+}
+
+.mode-toggle:hover {
+  background: rgba(255,255,255,0.4);
+}
+
   position:fixed;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;z-index:9999;
   color:white;padding:20px;display:none;
 }
