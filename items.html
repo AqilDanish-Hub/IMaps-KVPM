@@ -10,9 +10,7 @@
 <body>
   <div class="header">
     <div class="brand">
-      <div class="logo" style="display:flex;align-items:center;justify-content:center;">
-        <img src="logo.png" alt="IMaPS KVPM Logo" width="40" height="40">
-      </div>
+      <div class="logo"><img src="logo.png" alt="IMaPS KVPM Logo"></div>
       <div>
         <h1>IMaps KVPM</h1>
         <div class="small">Pemetaan Interaktif — Kolej Vokasional Pasir Mas</div>
@@ -22,13 +20,11 @@
       <a href="index.html">Home</a>
       <a href="info.html">Informasi</a>
       <a href="items.html">Items</a>
+      <div class="theme-toggle">
+        <input type="checkbox" id="toggle-theme">
+        <label for="toggle-theme" class="switch"></label>
+      </div>
     </nav>
-    <div class="theme-switch">
-      <label class="switch">
-        <input type="checkbox" id="theme-toggle">
-        <span class="slider"></span>
-      </label>
-    </div>
   </div>
 
   <main class="container">
@@ -36,37 +32,19 @@
     <p class="lead">Klik pada nama bangunan untuk membuka peta Google My Maps (dibuka di tab baru).</p>
 
     <div class="items">
-      <!-- Senarai bangunan -->
       <div class="item"><div>Dewan Budiman</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
       <div class="item"><div>Pejabat</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
       <div class="item"><div>Surau Al-huda</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
-      <div class="item"><div>Blok Teknologi Maklumat</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
-      <div class="item"><div>Asrama Blok A</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
-      <!-- Tambah items lain seperti sebelum ini -->
+      <!-- Tambah item lain mengikut keperluan -->
     </div>
 
-    <div style="margin-top:20px">
+    <div class="btn-group" style="margin-top:20px">
       <a class="btn secondary" href="index.html">Kembali <--</a>
     </div>
   </main>
 
   <footer>© <span id="year"></span> IMaps KVPM</footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const toggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    if(localStorage.getItem('theme') === 'light'){
-      body.classList.add('light-mode');
-      toggle.checked = true;
-    }
-    toggle.addEventListener('change', () => {
-      body.classList.toggle('light-mode');
-      if(body.classList.contains('light-mode')){
-        localStorage.setItem('theme','light');
-      }else{
-        localStorage.setItem('theme','dark');
-      }
-    });
-  </script>
+
+  <script src="theme.js"></script>
 </body>
 </html>
