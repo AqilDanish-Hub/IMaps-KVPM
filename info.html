@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-mode">
   <div class="header">
     <div class="brand">
       <img src="logo.png" alt="IMaPS KVPM Logo" class="logo" width="60" height="60" style="margin-right:10px">
@@ -44,11 +44,14 @@
   </main>
 
   <footer>© <span id="year"></span> IMaps KVPM</footer>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
     const toggleBtn = document.getElementById('mode-toggle');
     toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
+      document.body.classList.toggle('dark-mode');
       toggleBtn.textContent = document.body.classList.contains('light-mode') ? '🌚 Light Mode' : '🌙 Dark Mode';
     });
   </script>
