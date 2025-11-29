@@ -8,9 +8,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button id="mode-toggle">🌙 Dark Mode</button>
+
   <div class="header">
     <div class="brand">
-      <!-- ✅ Updated logo -->
       <img src="logo.png" alt="IMaPS KVPM Logo" class="logo" width="60" height="60" style="margin-right:10px">
       <div>
         <h1>IMaps KVPM</h1>
@@ -21,7 +22,6 @@
       <a href="index.html">Home</a>
       <a href="info.html">Informasi</a>
       <a href="items.html">Items</a>
-      <button class="mode-toggle" onclick="toggleMode()">🌓</button>
     </nav>
   </div>
 
@@ -45,6 +45,14 @@
   </main>
 
   <footer>© <span id="year"></span> IMaps KVPM</footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggleBtn = document.getElementById('mode-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      toggleBtn.textContent = document.body.classList.contains('light-mode') ? '🌚 Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
 </body>
 </html>
