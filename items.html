@@ -1,64 +1,85 @@
 <!doctype html>
 <html lang="ms">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IMaps KVPM — Items</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IMaps KVPM — Items</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div class="header">
+    <div class="brand">
+      <div class="logo"><img src="assets/logo.png" alt="IMaPS KVPM Logo" width="40" height="40"></div>
+      <div>
+        <h1>IMaps KVPM</h1>
+        <div class="small">Pemetaan Interaktif — Kolej Vokasional Pasir Mas</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="info.html">Informasi</a>
+      <a href="items.html">Items</a>
 
-    <!-- HEADER -->
-    <header class="header">
-        <img src="logo.png" class="logo" alt="IMaps KVPM">
-        <h1 class="title">Senarai Lokasi</h1>
-    </header>
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+      </label>
+    </nav>
+  </div>
 
-    <!-- BUTTON KEMBALI -->
-    <a class="back-btn" href="index.html">← Kembali ke Home</a>
+  <main class="container">
+    <h2 class="hero-title">Senarai Bangunan</h2>
+    <p class="lead">Klik pada nama bangunan untuk membuka peta Google My Maps (dibuka di tab baru).</p>
 
-    <!-- ===================== SEARCH BAR (BARU) ===================== -->
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Cari lokasi…" autocomplete="off">
+    <!-- 🔍 SEARCH BOX (DITAMBAH, TIDAK UBAH UI) -->
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Cari bangunan…" 
+      style="width:100%; padding:12px 14px; border-radius:10px; border:1px solid #ccc; margin-bottom:18px; font-size:15px;">
+
+    <div class="items">
+      <div class="item"><div>Dewan Budiman</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Pejabat</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Surau Al-huda</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Blok Teknologi Maklumat</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Asrama Blok A</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Asrama Blok B</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Asrama Blok C</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Asrama Blok D</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Dewan Makan Asrama</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
+      <div class="item"><div>Padang Bola Sepak</div><div><a class="btn" target="_blank" href="#">Buka Peta</a></div></div>
     </div>
 
-    <!-- ===================== ORIGINAL ITEMS (TIDAK DIUBAH) ===================== -->
-    <div id="itemsContainer">
-
-        <div class="item-card">Dewan Budiman</div>
-        <div class="item-card">Pejabat</div>
-        <div class="item-card">Surau Al-Huda</div>
-        <div class="item-card">Blok Teknologi Maklumat</div>
-        <div class="item-card">Asrama Blok A</div>
-        <div class="item-card">Asrama Blok B</div>
-        <div class="item-card">Asrama Blok C</div>
-        <div class="item-card">Asrama Blok D</div>
-        <div class="item-card">Dewan Makan Asrama</div>
-        <div class="item-card">Padang Bola Sepak</div>
-
+    <div style="margin-top:20px">
+      <a class="btn secondary" href="index.html">Kembali <--</a>
     </div>
+  </main>
 
-    <!-- SCRIPT SEARCH FUNCTION -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const searchInput = document.getElementById("searchInput");
+  <footer>© <span id="year"></span> IMaps KVPM</footer>
 
-            searchInput.addEventListener("keyup", () => {
-                const keyword = searchInput.value.toLowerCase();
-                const items = document.querySelectorAll(".item-card");
+  <script src="theme.js"></script>
 
-                items.forEach(item => {
-                    const text = item.innerText.toLowerCase();
-                    item.style.display = text.includes(keyword) ? "block" : "none";
-                });
-            });
+  <!-- 🔍 FUNGSI SEARCH (DITAMBAH, TIDAK MENGGANGGU THEME.JS) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const searchInput = document.getElementById("searchInput");
+      const items = document.querySelectorAll(".item");
+
+      searchInput.addEventListener("keyup", () => {
+        const keyword = searchInput.value.toLowerCase();
+
+        items.forEach(item => {
+          const text = item.innerText.toLowerCase();
+          item.style.display = text.includes(keyword) ? "flex" : "none";
         });
-    </script>
+      });
 
-    <!-- THEME HANDLER -->
-    <script src="theme.js"></script>
+      // footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    });
+  </script>
 
 </body>
 </html>
