@@ -134,3 +134,90 @@ footer{padding:20px;text-align:center;color:var(--muted);font-size:14px;transiti
 }
 input:checked + .slider{background:var(--brand);}
 input:checked + .slider:before{transform:translateX(24px);}
+
+/* ================= SEARCH BOX ================= */
+.search-container {
+    padding: 10px 20px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    font-size: 16px;
+    background: var(--card);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 5px var(--accent);
+}
+
+/* ================= ITEM CARD ================= */
+.item-card {
+    padding: 15px 20px;
+    margin: 12px 20px;
+    border-radius: 14px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 17px;
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* ================= BACK BUTTON ================= */
+.back-btn {
+    display: inline-block;
+    margin: 15px 20px;
+    padding: 10px 18px;
+    background: var(--accent);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ================= HEADER ================= */
+.header {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.title {
+    color: var(--text);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 600px) {
+    .item-card {
+        margin: 10px;
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+
+    #searchInput {
+        font-size: 15px;
+    }
+
+    .logo {
+        width: 65px;
+    }
+}
+
