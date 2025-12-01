@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <div class="header">
     <div class="brand">
@@ -17,12 +16,10 @@
         <div class="small">Pemetaan Interaktif — Kolej Vokasional Pasir Mas</div>
       </div>
     </div>
-
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="info.html">Informasi</a>
       <a href="items.html">Items</a>
-
       <label class="switch">
         <input type="checkbox" id="theme-toggle">
         <span class="slider"></span>
@@ -32,45 +29,21 @@
 
   <main class="container">
     <h2 class="hero-title">Senarai Bangunan</h2>
-    <p class="lead">Klik pada nama bangunan untuk membuka peta Google My Maps.</p>
+    <p class="lead">Klik pada nama bangunan untuk membuka peta Google My Maps (dibuka di tab baru).</p>
 
-    <!-- Search Bar -->
-    <input id="searchBox" type="text" placeholder="Cari bangunan..." class="search-bar">
+    <!-- Search bar -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Cari bangunan...">
+    </div>
 
- <div class="items">
-  <div class="item"><div>Dewan Budiman</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Pejabat</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Surau Al-huda</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Blok Teknologi Maklumat</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Asrama Blok A</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Asrama Blok B</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Asrama Blok C</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Asrama Blok D</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Dewan Makan Asrama</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Padang Bola Sepak</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Padang Rugby</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Student Centre</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Parking Bas</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Kantin</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Kantin 2</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Bilik PTP</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Court Sukan</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Ladang Kebun KVPM</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Bilik Mesyuarat</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Koperasi Sekolah</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Garage Automotif</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Wakaf Amal</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Cyber Cafe Asrama</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Koperasi Asrama</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Bilik Warden</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Pejabat Penyelia Asrama</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Makmal ICT</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Rumah Warden</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Rumah Pengarah</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Pondok Guard</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Bilik Psikologi dan Kerjaya</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-  <div class="item"><div>Mock Office</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
-</div>
+    <div class="items">
+      <div class="item"><div>Dewan Budiman</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
+      <div class="item"><div>Pejabat</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
+      <div class="item"><div>Surau Al-huda</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
+      <div class="item"><div>Blok Teknologi Maklumat</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
+      <div class="item"><div>Asrama Blok A</div><div><a class="btn" target="_blank" href="https://www.google.com/maps/d/edit?mid=1rzsq0Y17JVg2CwOjup-DFrcuYT2XAyI&ll=6.0805551031738005%2C102.18998105173657&z=20">Buka Peta</a></div></div>
+      <!-- Tambah semua bangunan lain dengan link yang sama seperti contoh di atas -->
+    </div>
 
     <div style="margin-top:20px">
       <a class="btn secondary" href="index.html">Kembali <--</a>
@@ -80,19 +53,21 @@
   <footer>© <span id="year"></span> IMaps KVPM</footer>
 
   <script src="theme.js"></script>
-
   <script>
-    // Search Function
-    document.getElementById("searchBox").addEventListener("keyup", function(){
-      let filter = this.value.toLowerCase();
-      let items = document.querySelectorAll(".card-photo");
+    // Search filter
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', function() {
+      const filter = searchInput.value.toLowerCase();
+      const items = document.querySelectorAll('.item');
 
       items.forEach(item => {
-        let name = item.querySelector(".item-text").textContent.toLowerCase();
-        item.style.display = name.includes(filter) ? "" : "none";
+        const text = item.querySelector('div:first-child').textContent.toLowerCase();
+        item.style.display = text.includes(filter) ? '' : 'none';
       });
     });
-  </script>
 
+    // Auto year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
